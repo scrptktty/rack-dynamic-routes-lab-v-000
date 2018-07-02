@@ -7,7 +7,11 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    if @@items.include?(/items/)
+    if req.path.match(/items/)
+      item_name = req.path.split("/items/").last 
+
+      if @@items.include?(item_name)
+    
 
     else
       resp.write "Route not found"
