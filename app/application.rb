@@ -12,7 +12,7 @@ class Application
 
       if @@items.include?(item_name)
         item = @@items.find{ |i| i.name == item_name}
-      # song = @@songs.find{|s| s.title == song_title}
+        resp.write item.name
 
 
     else
