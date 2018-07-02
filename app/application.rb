@@ -8,12 +8,11 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path.match(/items/)
-      # item_name = req.path.split("/items/").last #turn /items/Sorry into Sorry
+      item_name = req.path.split("/items/").last
 
-      if
-      # song = @@items.find{|s| s.title == item_name}
+      if item = @@items.find{|s| s.title == item_name}
       #
-      # resp.write song.artist
+      # resp.write item.artist
 
       else
         resp.write "Item not found"
