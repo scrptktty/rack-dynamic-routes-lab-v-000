@@ -10,7 +10,8 @@ class Application
     if req.path.match(/items/)
 
       items = req.path.split("/items/")
-      
+
+      search_item = req.params["item"]
       if items.include?(item_name)
         item = @@items.find{ |i| i.name == item_name}
         resp.write item.name
