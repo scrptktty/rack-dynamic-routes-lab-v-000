@@ -13,6 +13,9 @@ class Application
       if @@items.include?(item_name)
         item = @@items.find{ |i| i.name == item_name}
         resp.write item.name
+      else
+        resp.write "Item not found"
+      end
 
 
     else
