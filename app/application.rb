@@ -8,7 +8,10 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    if req.path.match(/items/)
+    if @@items.include? (/items/)
+      binding.pry
+      search = req.params["item"]
+      if
       item_name = req.path.match.split("items").last
       item = @@items.find { |i| i.name == item_name }
 
