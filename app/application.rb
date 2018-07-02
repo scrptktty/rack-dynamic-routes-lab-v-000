@@ -12,7 +12,7 @@ class Application
       items = req.path.split("/items/")
       binding.pry
 
-      if @@items.include?(item_name)
+      if items.include?(item_name)
         item = @@items.find{ |i| i.name == item_name}
         resp.write item.name
       else
