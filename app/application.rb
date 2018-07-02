@@ -7,14 +7,14 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    if req.path.match(/items/) 
-      # item_name = req.path.split("/songs/").last #turn /songs/Sorry into Sorry
+    if req.path.match(/items/)
+      # item_name = req.path.split("/items/").last #turn /items/Sorry into Sorry
 
       if
-      # song = @@songs.find{|s| s.title == item_name}
-      # 
+      # song = @@items.find{|s| s.title == item_name}
+      #
       # resp.write song.artist
-   
+
       else
         resp.write "Item not found"
       end
