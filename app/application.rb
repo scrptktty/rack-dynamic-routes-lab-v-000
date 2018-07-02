@@ -11,6 +11,7 @@ class Application
 
       items = req.path.split("/items/")
 
+      binding.pry
       search_item = req.params["item"]
       if items.include?(item_name)
         item = @@items.find{ |i| i.name == item_name}
